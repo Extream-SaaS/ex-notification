@@ -16,9 +16,7 @@ class WebrtcCallback {
         }
         await instanceRef.set({
             participants: this.admin.firestore.FieldValue.arrayUnion(userId),
-        }, {
-            merge: true
-        });
+        }, { merge: true });
         return true;
     }
 }
