@@ -1,0 +1,30 @@
+{
+  "name": "ex-notification",
+  "version": "1.0.0",
+  "description": "Notifications and alerts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test configured\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Extream-SaaS/ex-notification.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Extream-SaaS/ex-notification/issues"
+  },
+  "homepage": "https://github.com/Extream-SaaS/ex-notification#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.2.0",
+    "@google-cloud/pubsub": "^2.5.0",
+    "@sendgrid/mail": "^7.3.0",
+    "bcrypt": "^5.0.0",
+    "firebase-admin": "^9.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
