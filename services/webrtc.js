@@ -19,6 +19,20 @@ class WebrtcCallback {
         }, { merge: true });
         return true;
     }
+    async getParticipants(itemId, instanceId) {
+        const itemRef = this.db.collection('sessions').doc(itemId);
+        const item = await itemRef.get();
+        if (!item.exists) {
+            throw new Error('webrtc item not found');
+        }
+        const instanceRef = session.collection('instances').doc(instanceId);
+        const instance = await instanceRef.get();
+        if (!instance.exists) {
+            throw new Error('webrtc instance not found');
+        }
+        const data = instance.data();
+        return data.participants;
+    }
 }
 
 module.exports = (db, admin) => {

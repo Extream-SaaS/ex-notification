@@ -56,7 +56,7 @@ jobs:
           PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
           APPLICATION_CREDENTIALS: ${{secrets.GCLOUD_CREDENTIALS}}
         with:
-          args: functions deploy manage-notification --region europe-west2 --source . --runtime nodejs12 --entry-point manage --env-vars-file manager/variables.yaml --trigger-topic ex-notification --retry
+          args: functions deploy manage-notification --region europe-west2 --source . --runtime nodejs12 --entry-point manage --env-vars-file variables.yaml --trigger-topic ex-notification --retry
 
       - uses: act10ns/slack@v1
         env:
