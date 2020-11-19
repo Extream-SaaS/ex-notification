@@ -45,7 +45,7 @@ jobs:
         id: Create-Environment-Variables
         uses: microsoft/variable-substitution@v1
         with:
-          files: 'manager/variables.yaml'
+          files: 'variables.yaml'
         env:
           SENDMAIL_KEY: ${{ secrets.SENDMAIL_KEY }}
           EXAUTH: ${{ secrets.EXAUTH }}
