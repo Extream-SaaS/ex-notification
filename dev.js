@@ -8,15 +8,16 @@ payload = {
   template: 'webrtc-invite',
   payload: {
     content: {
-      title: 'A meeting',
-      link: 'http://localhost:8889/predominantly-ondatra-protheses',
+      title: 'A meeting between folks',
+      link: 'http://localhost:8889/deploration-piscivorous-perceptual',
       from: 'Demo User'
     },
     itemId: 'fF9KUD0z1Ic5zGeEZd8O',
-    instanceId: 'predominantly-ondatra-protheses',
+    instanceId: 'deploration-piscivorous-perceptual',
     itemType: 'webrtc',
     onComplete: 'addParticipant',
-    register: true
+    register: true,
+    id: 'DED9FBlrEk1sM9TlaeuA'
   },
   user: {
     id: 'e91d0d10-b63c-4aec-8435-1d99d8042042',

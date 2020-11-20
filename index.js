@@ -84,7 +84,7 @@ const registerUsers = (requester, socketId, source, users, { itemId, instanceId,
       if (callback) {
         await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', payload: { itemId, instanceId, itemType, action: onComplete, user }, requester, socketId });
       } else {
-        await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', error: 'callback icomplete', payload: { itemId, instanceId, itemType, action: onComplete }, requester, socketId });
+        await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', error: 'callback incomplete', payload: { itemId, instanceId, itemType, action: onComplete }, requester, socketId });
       }
     } catch (err) {
       await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', error: err.message, payload: { itemId, instanceId, itemType, action: onComplete }, requester, socketId });
