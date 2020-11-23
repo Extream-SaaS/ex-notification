@@ -3,7 +3,7 @@ let payload, data, event;
 payload = {
   method: 'email',
   recipients: [
-    'rich@extream.app'
+    'rich+invitee@extream.app'
   ],
   template: 'webrtc-invite',
   payload: {
@@ -13,7 +13,7 @@ payload = {
       from: 'Demo User'
     },
     itemId: 'fF9KUD0z1Ic5zGeEZd8O',
-    instanceId: 'deploration-piscivorous-perceptual',
+    instanceId: 'pseudoscalars-myosotes-rogatory',
     itemType: 'webrtc',
     onComplete: 'addParticipant',
     register: true,

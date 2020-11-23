@@ -45,7 +45,7 @@ const registerUser = async (token, user) => {
     user: JSON.stringify({}),
     notify: false,
   })
-  .map(([key, value]) => `${key}=${value}`)
+  .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
   .join('&');
   const config = {
     headers: {
@@ -82,11 +82,14 @@ const registerUsers = (requester, socketId, source, users, { itemId, instanceId,
       const callback = await itemTypes[itemType][onComplete](user.id, itemId, instanceId);
       // need to send this user back as a status update for the socket
       if (callback) {
+        console.log('user added', user);
         await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', payload: { itemId, instanceId, itemType, action: onComplete, user }, requester, socketId });
       } else {
+        console.log('user not added', 'callback incomplete');
         await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', error: 'callback incomplete', payload: { itemId, instanceId, itemType, action: onComplete }, requester, socketId });
       }
     } catch (err) {
+      console.log('user not added', err.message);
       await publish('ex-gateway', source, { domain: 'consumer', action: 'notification', command: 'update', error: err.message, payload: { itemId, instanceId, itemType, action: onComplete }, requester, socketId });
     }
   });
